@@ -2,8 +2,11 @@ const express = require("express");
 const mongoDbCon = require("./dbcon");
 const app = express();
 const userRoutes = require("./router/router");
+const cors = require("cors");
 
 mongoDbCon();
+
+app.use(cors());
 
 app.use(express.json());
 
